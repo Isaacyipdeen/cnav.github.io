@@ -53,5 +53,18 @@
     <input type="submit" value="Submit">
 </form>
 
+<script src='https://cdn-app2.securiti.ai/consent/form-consent-sdk.js'></script>
+<script>
+window.addEventListener('load',
+    FormConsentSDK.initialize({
+        codeGenMetadata:{"formPropertyId":"5","formSelector":"[id*=\"simple-form\"]","subjectIdentifiers":[{"name":"First Name:","selector":"[name = \"first-name\"]","isPrimary":false},{"name":"Last Name:","selector":"[name = \"last-name\"]","isPrimary":false},{"name":"Email:","selector":"[name = \"email\"]","isPrimary":true},{"name":"Submit","selector":"[value = \"Submit\"]","isPrimary":false}],"consentIdentifiers":[{"type":"radio","name":"Email","selector":"[name = \"email\"]","propertyId":176,"consentValue":"1"}],"consentTrigger":{"action":"click","selector":"[type=\"submit\"]"}},
+        url: 'https://app2.securiti.ai/privaci/v1/',
+        authToken:'f7c552e2-5d05-410e-a1fd-cafadc311ebf',
+        orgId:'1',
+        onConsentSuccess: null,
+        onConsentFailure: null
+    })
+)
+</script>
 </body>
 </html>
